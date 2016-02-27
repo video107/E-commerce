@@ -1,0 +1,32 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import 'ionicons';
+@import "core";
+@import "anima";
+@import "colors";
+@import "contents";
+@import "cta";
+@import "features";
+@import "footer";
+@import "forms";
+@import "menu-overlay";
+@import "modal";
+@import "numbers";
+@import "owl.carousel";
+// @import "purple";
+@import "sliders";
+@import "socials";
+// @import "turquoise";
+.slider_item1 {
+   background-image: image-url("goods_1.png");
+}
+.slider_item3 {
+   background-image: image-url("goods_3.png");
+}
+.slider_item2 {
+   background-image: image-url("goods_2.png");
+}
+.form-resize {
+  resize: none;
+}
