@@ -14,8 +14,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="home">
+  <% if flash[:success] %>
+  <p class="notice alert alert-success">
+    <%= flash[:success] %>
+  </p>
+  <%end%>
+  <% if flash[:notice] %>
+  <p class="notice alert alert-info">
+    <%= flash[:notice] %>
+  </p>
+  <%end%>
 
 <%= yield %>
 
 </body>
 </html>
+<script>
+  $(".notice").fadeOut(3000);
+</script>

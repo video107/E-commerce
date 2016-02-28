@@ -2,7 +2,11 @@ class ContactsController < ApplicationController
 
   def index
     @contact = Contact.new
+    @order = Order.new
+    @product = Product.first
   end
+
+
 
   def create
     @contact = Contact.new(contact_params)

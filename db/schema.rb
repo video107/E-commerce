@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225135235) do
+ActiveRecord::Schema.define(version: 20160228072603) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -28,11 +28,24 @@ ActiveRecord::Schema.define(version: 20160225135235) do
     t.string   "order_email"
     t.string   "payment_method"
     t.string   "status"
-    t.integer  "gold_count"
-    t.integer  "rose_count"
-    t.integer  "silver_count"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "gold_count",     default: 0
+    t.integer  "rose_count",     default: 0
+    t.integer  "silver_count",   default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "product_id"
+    t.integer  "total_amount",   default: 0
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "gold_stock",   default: 0
+    t.integer  "rose_stock",   default: 0
+    t.integer  "silver_stock", default: 0
+    t.integer  "gold_price",   default: 50
+    t.integer  "rose_price",   default: 50
+    t.integer  "silver_price", default: 50
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

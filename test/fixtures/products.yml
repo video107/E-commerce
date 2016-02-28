@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gold_stock: 1
+  rose_stock: 1
+  silver: 1
+  gold_price: 1
+  rose_price: 1
+  silver_price: 1
+
+two:
+  gold_stock: 1
+  rose_stock: 1
+  silver: 1
+  gold_price: 1
+  rose_price: 1
+  silver_price: 1

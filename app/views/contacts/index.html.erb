@@ -229,35 +229,35 @@
             <div class="alert alert-success" role="alert"><strong>已收到您的訊息, 會盡快處理</strong></div>
           </div>
           <%= form_for @contact, :html => {id: "contact-form", class: "myform"}, :url => contacts_path do |f| %>
-            <div class="row clearfix">
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <%= f.label :name, "姓名", class: "control-label" %>
-                  <div class="controls">
-                    <%= f.text_field :name, placeholder: "您的姓名", class: "form-control input-lg requiredField", :data => {:"error-empty" => "請輸入您的姓名"} %>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <%= f.label :email, "Email", class: "control-label" %>
-                  <div class=" controls">
-                    <%= f.email_field :email, placeholder: "您的Email", class: "form-control input-lg requiredField", :data => {:"error-invalid" => "錯誤的Email格式", :"error-empty" => "請輸入您的Email"} %>
-                  </div>
+          <div class="row clearfix">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="form-group">
+                <%= f.label :name, "姓名", class: "control-label" %>
+                <div class="controls">
+                  <%= f.text_field :name, placeholder: "您的姓名", class: "form-control input-lg requiredField", :data => {:"error-empty" => "請輸入您的姓名"} %>
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <label class="control-label" for="contact-message">Message</label>
-              <%= f.label :content, "Content", class: "control-label" %>
-              <div class="controls">
-                <%= f.text_area :content, placeholder: "您要告訴我們什麼?", class: "form-control input-lg requiredField form-resize", rows: "5", :data => {:"error-empty" => "請輸入訊息"} %>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="form-group">
+                <%= f.label :email, "Email", class: "control-label" %>
+                <div class=" controls">
+                  <%= f.email_field :email, placeholder: "您的Email", class: "form-control input-lg requiredField", :data => {:"error-invalid" => "錯誤的Email格式", :"error-empty" => "請輸入您的Email"} %>
+                </div>
               </div>
             </div>
-            <p>
-              <%= f.submit "送出Feedback", class: "btn btn-store btn-block", data: {"error-message": "訊息錯誤", "sending-message": "訊息傳送中", "ok-message": "已收到您的訊息, 會盡快處理"}%>
-            </p>
-            <!-- <input type="hidden" name="submitted" id="submitted3" value="true"> -->
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="contact-message">Message</label>
+            <%= f.label :content, "Content", class: "control-label" %>
+            <div class="controls">
+              <%= f.text_area :content, placeholder: "您要告訴我們什麼?", class: "form-control input-lg requiredField form-resize", rows: "5", :data => {:"error-empty" => "請輸入訊息"} %>
+            </div>
+          </div>
+          <p>
+            <%= f.submit "送出Feedback", class: "btn btn-store btn-block", data: {"error-message": "訊息錯誤", "sending-message": "訊息傳送中", "ok-message": "已收到您的訊息, 會盡快處理"}%>
+          </p>
+          <!-- <input type="hidden" name="submitted" id="submitted3" value="true"> -->
           <% end %>
         </div>
       </div>
@@ -316,38 +316,84 @@
           <a class="close-modal" href="#" data-dismiss="modal">
             <span class="menu-icon"></span>
           </a>
-          <!-- <img src="img/cup1.jpg" alt="" class="img-responsive"> -->
           <%= image_tag("jumbotron.png",class: "img-responsive") %>
         </div>
         <div class="modal-body">
           <h3 class="text-center"><b>PaperCup - Mockup </b>($5,00)</h3>
-
         </div>
         <div class="modal-footer">
-          <form id="buy" action="buy" class="myform" method="post" novalidate>
-            <div class="form-group">
-              <label class="control-label" for="contact-mail">Email</label>
-              <div class=" controls">
-                <input name="email" placeholder="PayPal Email" class="form-control input-lg requiredField" type="email" data-error-invalid="Invalid email address" data-error-empty="Enter email">
+          <%= form_for @order, :html => {id: "buy", class: "myform"}, :url => product_orders_path(@product) do |f| %>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="text-center">
+                <h3>土豪金</h3>
+                <h3 style="margin-top:-5px;">TWD:<%= @product.gold_price %></h3>
+                <% gold_qty = @product.gold_stock %>
+                <%= f.select :gold_count, 0..gold_qty, {}, class: "" %>
               </div>
             </div>
-            <div class="form-group">
-              <label class="control-label">password</label>
-              <div class="controls">
-                <input id="password" class="form-control" type="password" placeholder="PayPal Password" name="password">
+            <div class="col-sm-4">
+              <div class="text-center">
+                <h3>玫瑰金</h3>
+                <h3 style="margin-top:-5px;">TWD:<%= @product.rose_price %></h3>
+                <% rose_qty = @product.rose_stock %>
+                <%= f.select :rose_count, 0..rose_qty, {}, class: "" %>
               </div>
             </div>
-            <div class="form-group">
-              <button type="button" class="btn btn-block">PAY NOW</button>
+            <div class="col-sm-4">
+              <div class="text-center">
+                <h3>時尚銀</h3>
+                <h3 style="margin-top:-5px;">TWD:<%= @product.silver_price %></h3>
+                <% silver_qty = @product.silver_stock %>
+                <%= f.select :silver_count, 0..silver_qty, {}, class: "" %>
+              </div>
             </div>
-            <p class="text-center"><a href="" data-dismiss="modal">Cancel</a>
-            </p>
-          </form>
+          </div>
+          <div class="clearfix"></div>
+          <div class="spacing"></div>
+          <div class="form-group">
+            <%= f.label :order_name, "您的姓名" %>
+            <div class="controls">
+              <%= f.text_field :order_name, :placeholder => "您的姓名", :class => "form-control" %>
+              <%#= f.text_field :name, placeholder: "您的姓名", class: "form-control input-lg requiredField", :data => {:"error-empty" => "請輸入您的姓名"} %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :order_phone, "手機" %>
+            <div class="controls">
+              <%= f.text_field :order_phone, :placeholder => "您的手機(10碼)", :class => "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :order_email,"Email"%>
+            <div class="controls">
+              <%= f.text_field :order_email, :placeholder => "Email", :class => "form-control" %>
+              <%#= f.email_field :email, placeholder: "您的Email", class: "form-control input-lg requiredField", :data => {:"error-invalid" => "錯誤的Email格式", :"error-empty" => "請輸入您的Email"} %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :order_address,"送貨地址"%>
+            <div class="controls">
+              <%= f.text_area :order_address, :placeholder => "送貨地址", rows: "2", :class => "form-control" %>
+              <%#= f.text_area :content, placeholder: "您要告訴我們什麼?", class: "form-control input-lg requiredField form-resize", rows: "5", :data => {:"error-empty" => "請輸入訊息"} %>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <!-- <button type="button" class="btn btn-block">PAY NOW</button> -->
+            <%= f.submit "下單", class: "btn btn-block" %>
+            <%#= f.submit "送出Feedback", class: "btn btn-store btn-block", data: {"error-message": "訊息錯誤", "sending-message": "訊息傳送中", "ok-message": "已收到您的訊息, 會盡快處理"}%>
+          </div>
+          <p class="text-center"><a href="" data-dismiss="modal">Cancel</a>
+          </p>
+          <!-- </form> -->
+          <% end %>
         </div>
       </div>
     </div>
   </div>
-<script>
+  <script>
 
-</script>
+  </script>
 </div>
