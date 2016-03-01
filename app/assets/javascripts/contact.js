@@ -27,40 +27,39 @@ $(document).ready(function() {
 		});
 		if(hasError) {
 			$('#contact-form button').html(errorMessage).addClass('btn-error');
-			
+
 			setTimeout(function(){
 				$('#contact-form button').removeClass('btn-error').html(buttonCopy);
-				
+
 			},3000);
 		}
 		else {
 			$('#contact-form button').html(sendingMessage);
-			
-			var formInput = $(this).serialize();
-			var link = $(this).attr('action');	
-			$.ajax({
-				type: 'POST',	
-				url: link,
-				data: formInput
-			}).done(function(data) {
+			//
+			// var formInput = $(this).serialize();
+			// var link = $(this).attr('action');
+			// $.ajax({
+			// 	type: 'POST',
+			// 	url: link,
+			// 	data: formInput
+			// }).done(function(data) {
 			  $('#contact-form').trigger("reset");
 			  $( this ).addClass( "done" );
 			  $('#contact-form button').html(okMessage);
 			  $('#alert-contact').show();
-
-			  setTimeout(function(){
-					$('#contact-form button').html(buttonCopy);
-				},4000);
-			})
-			.fail(function() {
-				$('#contact-form button').html('Save error');
-    			setTimeout(function(){
-					$('#contact-form button').html(buttonCopy);
-				},4000);
-  			});
+			//
+			//   setTimeout(function(){
+			// 		$('#contact-form button').html(buttonCopy);
+			// 	},4000);
+			// })
+			// .fail(function() {
+			// 	$('#contact-form button').html('Save error');
+    	// 		setTimeout(function(){
+			// 		$('#contact-form button').html(buttonCopy);
+			// 	},4000);
+  		// 	});
 
 		}
-		return false;	
+		return false;
 	});
 });
-

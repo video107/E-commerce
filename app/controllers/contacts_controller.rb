@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
     if @contact.save!
       # UserMailer.notify_contact(@contact).deliver_later!
       # UserMailer.notify_contact(@contact).deliver_now!
+      flash[:success] = "收到您的問題,會盡快處理"
       redirect_to root_path
     else
       redirect :back
