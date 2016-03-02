@@ -3,10 +3,10 @@ class OrdersController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @order = @product.orders.new(order_params)
-    UserMailer.notify_order(@order).deliver_later!
     if @product.enough?("gold", @order.gold_count) && @product.enough?("rose", @order.gold_count) && @product.enough?("silver", @order.gold_count)
       if @order.save!
         flash[:notice] = "購買需求已送出, 我們會盡快處理您的訂單"
+        UserMailer.notify_order(@order).deliver_later!
         redirect_to root_path
       else
         redirect_to :back
