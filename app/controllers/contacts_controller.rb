@@ -11,8 +11,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save!
-      # UserMailer.notify_contact(@contact).deliver_later!
-      # UserMailer.notify_contact(@contact).deliver_now!
+      UserMailer.notify_contact(@contact).deliver_later!
       flash[:success] = "收到您的問題,會盡快處理"
       redirect_to root_path
     else
