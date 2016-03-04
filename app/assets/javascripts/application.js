@@ -19,10 +19,10 @@
 //= require core
 //= require menu-overlay
 //= require placeholders.min
-//= require owl.carousel
 //= require jquery.waitforimages.min
 //= require jquery.counterup.min
 //= require slide
+//= require owl.carousel
 //= require numbers
 //= require contact
 //= require_tree .
