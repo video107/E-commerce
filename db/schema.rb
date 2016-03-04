@@ -14,38 +14,38 @@
 ActiveRecord::Schema.define(version: 20160228072603) do
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "order_name"
-    t.string   "order_phone"
-    t.text     "order_address"
-    t.string   "order_email"
-    t.string   "payment_method"
-    t.string   "status"
-    t.integer  "gold_count",     default: 0
-    t.integer  "rose_count",     default: 0
-    t.integer  "silver_count",   default: 0
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "product_id"
-    t.integer  "total_amount",   default: 0
+    t.string   "order_name",     limit: 255
+    t.string   "order_phone",    limit: 255
+    t.text     "order_address",  limit: 65535
+    t.string   "order_email",    limit: 255
+    t.string   "payment_method", limit: 255
+    t.string   "status",         limit: 255
+    t.integer  "gold_count",     limit: 4,     default: 0
+    t.integer  "rose_count",     limit: 4,     default: 0
+    t.integer  "silver_count",   limit: 4,     default: 0
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.integer  "product_id",     limit: 4
+    t.integer  "total_amount",   limit: 4,     default: 0
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "gold_stock",   default: 0
-    t.integer  "rose_stock",   default: 0
-    t.integer  "silver_stock", default: 0
-    t.integer  "gold_price",   default: 50
-    t.integer  "rose_price",   default: 50
-    t.integer  "silver_price", default: 50
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "gold_stock",   limit: 4, default: 0
+    t.integer  "rose_stock",   limit: 4, default: 0
+    t.integer  "silver_stock", limit: 4, default: 0
+    t.integer  "gold_price",   limit: 4, default: 50
+    t.integer  "rose_price",   limit: 4, default: 50
+    t.integer  "silver_price", limit: 4, default: 50
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
 end

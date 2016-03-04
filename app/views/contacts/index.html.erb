@@ -62,13 +62,6 @@
       <div class="row" >
         <div class="col-sm-6 slider">
           <div id="as-slider" class="owl-carousel" data-autoplay="4000" data-navigation="false" data-dots="true" data-transition="">
-            <!-- <div class="item m-center" style="background-image: image-url("cup2.jpg");"></div>
-            <div class="item m-center" style="background-image: image-url("cup3.jpg");"></div>
-            <div class="item m-center" style="background-image: image-url("cup4.jpg");"></div>
-            <div class="item m-center" style="background-image: image-url("cup1.jpg");"></div> -->
-            <!-- <div class="item m-center" style="background-image: image-url("goods_1.png");"></div>
-            <div class="item m-center" style="background-image: image-url("goods_2.png");"></div>
-            <div class="item m-center" style="background-image: image-url("goods_3.png");"></div> -->
             <div class="item m-center slider_item1"></div>
             <div class="item m-center slider_item2"></div>
             <div class="item m-center slider_item3"></div>
@@ -394,6 +387,53 @@
     </div>
   </div>
   <script>
+  /*==============================
+  =            Slider            =
+  ==============================*/
+
+  var win = $(window),
+  	pxContainer = $('#as-slider');
+  	loaderIntro = '<div class="landing"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>';
+
+  /* Initialize Intro */
+  function initSlider() {
+  	var $this = pxContainer;
+  	$this.after(loaderIntro);
+  	$this.addClass(function () {
+  		return $this.find('.item').length > 1 ? "loaded" : "";
+  	});
+
+  	$this.waitForImages({
+  		finished: function () {
+  			// sleep(3000)
+  			$('.landing').remove();
+  			if ($this.hasClass('loaded')) {
+  				var autoplay = $this.data('autoplay'),
+  					navigation = $this.data('navigation'),
+  					dots = $this.data('dots'),
+  					transition = $this.data('transition');
+
+  				$this.owlCarousel({
+  				  items : 1,
+  					loop: true,
+  					autoplayTimeout: autoplay || false,
+  					dots: dots || false,
+  					nav: navigation || false,
+  					navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+  				    autoplay: true,
+  				    responsive: true,
+  					animateOut: transition || false
+  				});
+  			}
+  		},
+  		waitForAll: true
+  	});
+
+  }
+  if (pxContainer.length) {
+  	initSlider();
+  }
+  /*-----  End of Slider  ------*/
 
   </script>
 </div>

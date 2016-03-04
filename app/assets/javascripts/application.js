@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require modernizr.min
-//= require jquery
+//= require jquery-1.9.1.min
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
@@ -19,10 +19,10 @@
 //= require core
 //= require menu-overlay
 //= require placeholders.min
-//= require owl.carousel.min
+//= require owl.carousel
 //= require jquery.waitforimages.min
-//= require sliders
 //= require jquery.counterup.min
+//= require slide
 //= require numbers
 //= require contact
 //= require_tree .

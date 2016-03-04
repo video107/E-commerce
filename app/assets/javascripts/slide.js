@@ -25,7 +25,7 @@ function initSlider() {
 					transition = $this.data('transition');
 
 				$this.owlCarousel({
-				    items : 1,
+				  items : 1,
 					loop: true,
 					autoplayTimeout: autoplay || false,
 					dots: dots || false,
