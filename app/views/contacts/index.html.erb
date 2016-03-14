@@ -315,7 +315,7 @@
           <h3 class="text-center"><b>PaperCup - Mockup </b>($5,00)</h3>
         </div>
         <div class="modal-footer">
-          <%= form_for @order, :html => {id: "buy", class: "myform"}, :url => product_orders_path(@product) do |f| %>
+          <%= form_for @order, :html => {id: "buy", class: "myform"}, :url => orders_path do |f| %>
           <div class="row">
             <div class="col-sm-4">
               <div class="text-center">

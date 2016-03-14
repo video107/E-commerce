@@ -33,7 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeuuid', '>= 0.5.0'
 gem 'better_errors'
 gem 'annotate'
-
+gem 'active_merchant_pay2go'
+gem 'activemerchant'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

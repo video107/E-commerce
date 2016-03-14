@@ -79,4 +79,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: '139.162.32.166' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
+
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :production
+  end  
 end

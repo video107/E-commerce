@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :contacts
   root "contacts#index"
-  resources :products do
-    resources :orders
+  resources :contacts
+  resources :orders do
+    collection do
+      get :pay2go_return
+    end
   end
 end
