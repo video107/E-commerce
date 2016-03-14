@@ -11,6 +11,7 @@
 #  silver_price :integer          default("50")
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  name         :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
