@@ -3,7 +3,7 @@
 
 OffsitePayments::Integrations::Pay2go.setup do |pay2go|
   # You have to apply credential below by yourself.
-  pay2go.merchant_id = '123456'
-  pay2go.hash_key    = 'xxx'
-  pay2go.hash_iv     = 'yyy'
+  pay2go.merchant_id = Settings.pay2go_merchant_id
+  pay2go.hash_key    = Settings.pay2go_hash_key
+  pay2go.hash_iv     = Settings.pay2go_hash_iv
 end

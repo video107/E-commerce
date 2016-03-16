@@ -35,6 +35,8 @@ gem 'better_errors'
 gem 'annotate'
 gem 'active_merchant_pay2go'
 gem 'activemerchant'
+gem 'settingslogic'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
