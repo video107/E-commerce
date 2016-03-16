@@ -31,6 +31,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeuuid', '>= 0.5.0'
+gem 'better_errors'
+gem 'annotate'
+gem 'active_merchant_pay2go'
+gem 'activemerchant'
+gem 'settingslogic'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

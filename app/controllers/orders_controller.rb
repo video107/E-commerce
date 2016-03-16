@@ -1,13 +1,14 @@
 class OrdersController < ApplicationController
 
   def create
-    @product = Product.find(params[:product_id])
+    @product = Product.first
     @order = @product.orders.new(order_params)
-    if @product.enough?("gold", @order.gold_count) && @product.enough?("rose", @order.gold_count) && @product.enough?("silver", @order.gold_count)
+    if Product.all_enough?(@order.gold_count, @order.rose_count, @order.silver_count)
       if @order.save!
-        flash[:notice] = "購買需求已送出, 我們會盡快處理您的訂單"
-        # UserMailer.notify_order(@order).deliver_later!
-        redirect_to root_path
+        # render :show
+        respond_to do |format|
+          format.js { render :show}
+        end
       else
         redirect_to :back
         flash[:alert] = "需求未送出,請重新檢查您的資料"
@@ -16,7 +17,13 @@ class OrdersController < ApplicationController
       flash[:alert] = "產品數量不夠, 請重新選取數量"
       redirect_to root_path
     end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to :back
+    flash[:alert] = "需求未送出,請重新檢查您的資料"
+  end
 
+  def show
+    #code
   end
 
   private
