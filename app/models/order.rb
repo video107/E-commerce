@@ -21,8 +21,10 @@
 class Order < ActiveRecord::Base
   belongs_to :product
 
-  # validates_length_of :order_phone, :is => 10
-  # validates_numericality_of :order_phone, :only_integer => true
+  # validates_length_of : order_phone, :is => 10
+  validates_numericality_of :order_phone, :only_integer => true
+  validates :order_address, presence: true
+  validates :order_name, presence: true
 
   before_save :setup_total_amount
   after_create :consume_stock

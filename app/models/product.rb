@@ -25,6 +25,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.all_enough?(gold_num, rose_num, silver_num)
+    return false if gold_num + rose_num + silver_num == 0
     if gold_num <= first.gold_stock && rose_num <= first.rose_stock && silver_num <= first.silver_stock
       return true
     else

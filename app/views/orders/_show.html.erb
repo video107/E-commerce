@@ -1,0 +1,79 @@
+
+  <div class="modal-dialog modal-sm2">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a class="close-modal" href="#" data-dismiss="modal">
+          <span class="menu-icon"></span>
+        </a>
+        <%= image_tag("jumbotron.png",class: "img-responsive") %>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-center"><b>PaperCup - Mockup </b>($5,00)</h3>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="text-center">
+              <h3>土豪金</h3>
+              <h3 style="margin-top:-5px;">TWD:<%= @product.gold_price %></h3>
+              <p><%= @order.gold_count %></p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="text-center">
+              <h3>玫瑰金</h3>
+              <h3 style="margin-top:-5px;">TWD:<%= @product.rose_price %></h3>
+              <p><%= @order.rose_count %></p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="text-center">
+              <h3>時尚銀</h3>
+              <h3 style="margin-top:-5px;">TWD:<%= @product.silver_price %></h3>
+              <p><%= @order.silver_count %></p>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="spacing"></div>
+        <!-- <div class="form-group"> -->
+          <p class="text-center">姓名: <%= order.order_name %></p>
+        <!-- </div> -->
+        <!-- <div class="form-group"> -->
+          <p class="text-center">手機: <%= order.order_phone %></p>
+        <!-- </div> -->
+
+          <p class="text-center">Email: <%= order.order_email %></p>
+
+
+          <p class="text-center">送貨地址: <%= order.order_address %></p>
+
+
+          <p class="text-center">共 <%= order.total_amount %>元</p>
+
+
+        <div class="form-group">
+          <!-- <button type="button" class="btn btn-block">PAY NOW</button> -->
+          <% payment_service_for  @order,
+                                  @order.order_email,
+                                  service: :pay2go,
+                                  html: { class: "myform", :id => 'pay2go-form', :method => :post } do |service| %>
+            <% service.time_stamp @order.created_at %>
+            <% service.merchant_order_no @order.id %>
+            <% service.amt @order.total_amount %>
+            <% service.item_desc @order.product.name %>
+            <% service.email @order.order_email %>
+            <% service.login_type 0 %>
+            <% service.encrypted_data %>
+
+            <% service.client_back_url root_path %>
+            <% service.notify_url pay2go_return_orders_url %>
+            <%= submit_tag '立即付款', class: "btn btn-block" %>
+          <% end %>
+
+        </div>
+        <p class="text-center"><a href="" data-dismiss="modal">Cancel</a>
+        </p>
+      </div>
+    </div>
+  </div>

@@ -5,8 +5,10 @@ class OrdersController < ApplicationController
     @order = @product.orders.new(order_params)
     if Product.all_enough?(@order.gold_count, @order.rose_count, @order.silver_count)
       if @order.save!
-        # flash[:notice] = "購買需求已送出, 我們會盡快處理您的訂單"
-        render :show
+        # render :show
+        respond_to do |format|
+          format.js { render :show}
+        end
       else
         redirect_to :back
         flash[:alert] = "需求未送出,請重新檢查您的資料"
@@ -15,7 +17,7 @@ class OrdersController < ApplicationController
       flash[:alert] = "產品數量不夠, 請重新選取數量"
       redirect_to root_path
     end
-    rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound
     redirect_to :back
     flash[:alert] = "需求未送出,請重新檢查您的資料"
   end
