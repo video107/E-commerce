@@ -33,19 +33,6 @@ class Order < ActiveRecord::Base
     gold_count * product.gold_price + silver_count * product.silver_price + rose_count * product.rose_price
   end
 
-  protected
-
-  def setup_total_amount
-    self.total_amount = self.total
-  end
-
-  def consume_stock
-    self.product.update(
-         gold_stock:   product.gold_stock - gold_count,
-         rose_stock:   product.rose_stock - rose_count,
-         silver_stock: product.silver_stock - silver_count)
-  end
-
   def initial
     status = "initial"
   end
@@ -60,6 +47,19 @@ class Order < ActiveRecord::Base
 
   def payment_failed!
     update(status: "payment_failed")
+  end
+  
+  protected
+
+  def setup_total_amount
+    self.total_amount = self.total
+  end
+
+  def consume_stock
+    self.product.update(
+         gold_stock:   product.gold_stock - gold_count,
+         rose_stock:   product.rose_stock - rose_count,
+         silver_stock: product.silver_stock - silver_count)
   end
 
 end

@@ -29,7 +29,7 @@
                 <b>1E-shop</b> is onePage full responsive bootstrap template.<br>
               </p>
               <br>
-              <a class="btn white" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> BUY NOW</a>
+              <a class="btn white" id="buy-now" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> BUY NOW</a>
             </div>
           </div>
           <div class="col-sm-12 img-hero">
@@ -81,7 +81,7 @@
                   <li>Changeable background</li>
                   <li>High resolution 3000 × 1875px</li>
                 </ul>
-                <a href="#" data-toggle="modal" data-target="#product-modal" class="btn dark"><b>$5</b> BUY NOW</a>
+                <a href="#" id="buy-now" data-toggle="modal" data-target="#product-modal" class="btn dark"><b>$5</b> BUY NOW</a>
               </div>
             </div>
           </div>
@@ -144,17 +144,6 @@
     </div>
   </section>
 
-  <section class="cta-1 bg-dark padding-top-bottom text-center white-text">
-    <div class="container-fluid anima scale-in">
-      <div class="row">
-        <div class="col-sm-12">
-          <span>​Do you like PAPER CUP - Mockup? </span>
-          <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="news" class="content-1 bg-image-2 padding-top-bottom bg-shop">
     <div class="container">
       <div class="row">
@@ -171,6 +160,16 @@
     </div>
   </section>
 
+  <section class="cta-1 bg-dark padding-top-bottom text-center white-text">
+    <div class="container-fluid anima scale-in">
+      <div class="row">
+        <div class="col-sm-12">
+          <span>​Do you like PAPER CUP - Mockup? </span>
+          <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="facts" class="numbers-1 padding-top-bottom text-center">
     <div class="container">
@@ -375,7 +374,7 @@
 
           <div class="form-group">
             <!-- <button type="button" class="btn btn-block">PAY NOW</button> -->
-            <%= f.submit "下單", class: "btn btn-block" %>
+            <%= f.submit "下單", class: "btn btn-block", id: "confirm" %>
             <%#= f.submit "送出Feedback", class: "btn btn-store btn-block", data: {"error-message": "訊息錯誤", "sending-message": "訊息傳送中", "ok-message": "已收到您的訊息, 會盡快處理"}%>
           </div>
           <p class="text-center"><a href="" data-dismiss="modal">Cancel</a>
@@ -435,5 +434,17 @@
   }
   /*-----  End of Slider  ------*/
 
+  </script>
+
+  <script>
+
+     $("#buy-now").on('click', function(){
+       ga('send', 'event', 'button', 'click', 'AddToCart');
+       fbq('track', 'AddToCart');
+     });
+     $("#confirm").on('click', function(){
+       ga('send', 'event', 'button', 'click', 'AddPaymentInfo');
+       fbq('track', 'AddPaymentInfo');
+     });
   </script>
 </div>
