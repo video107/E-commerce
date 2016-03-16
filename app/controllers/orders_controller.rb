@@ -4,8 +4,8 @@ class OrdersController < ApplicationController
     @product = Product.first
     @order = @product.orders.new(order_params)
     if Product.all_enough?(@order.gold_count, @order.rose_count, @order.silver_count)
+      @order.initial
       if @order.save!
-        # render :show
         respond_to do |format|
           format.js { render :show}
         end
@@ -24,6 +24,20 @@ class OrdersController < ApplicationController
 
   def show
     #code
+  end
+
+  def pay2go_notify
+    notification = ActiveMerchant::Billing::Integrations::Pay2go::Notification.new(request.raw_post)
+
+    @order = Order.find_by_number(notification.merchant_order_no)
+
+    if notification.status && notification.checksum_ok?
+      @order.complete!
+    else
+      @order.payment_failed!
+    end
+
+    render text: '1|OK', status: 200
   end
 
   private

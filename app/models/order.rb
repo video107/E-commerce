@@ -44,7 +44,22 @@ class Order < ActiveRecord::Base
          gold_stock:   product.gold_stock - gold_count,
          rose_stock:   product.rose_stock - rose_count,
          silver_stock: product.silver_stock - silver_count)
+  end
 
+  def initial
+    status = "initial"
+  end
+
+  def initial!
+    update(status: "initial")
+  end
+
+  def complete!
+    update(status: "completed")
+  end
+
+  def payment_failed!
+    update(status: "payment_failed")
   end
 
 end

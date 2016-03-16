@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :contacts
   resources :orders do
     collection do
-      get :pay2go_return
+      get :pay2go_notify
     end
   end
 end
