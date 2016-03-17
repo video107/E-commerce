@@ -10,7 +10,7 @@ set :repo_url, 'git@github.com:video107/E-commerce.git'
 ask :branch,proc {`git rev-parse --abbrev-ref HEAD`.chomp}.call
 set :passenger_restart_command, -> { "touch #{fetch(:deploy_to)}/current/tmp/restart.txt" }
 set :passenger_restart_options, ""
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/email.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/email.yml', 'config/application.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :keep_releases, 5
 set :deploy_to, '/home/deploy/e-commerce'
