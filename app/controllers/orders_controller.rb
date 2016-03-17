@@ -40,6 +40,10 @@ class OrdersController < ApplicationController
     render text: '1|OK', status: 200
   end
 
+  def result
+    @order = Order.find(params[:id])
+  end
+
   private
 
   def order_params

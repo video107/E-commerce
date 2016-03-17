@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   root "contacts#index"
   resources :contacts
   resources :orders do
+    member do
+      get :result
+    end
     collection do
-      get :pay2go_notify
+      post :pay2go_notify
     end
   end
 end

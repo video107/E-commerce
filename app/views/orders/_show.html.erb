@@ -54,8 +54,8 @@
             <% service.login_type 0 %>
             <% service.encrypted_data %>
 
-            <% service.client_back_url root_path %>
-            <% service.notify_url pay2go_notify_orders_url %>
+            <% service.client_back_url Settings.host+"orders/"+@order.id.to_s+"/result" %>
+            <% service.notify_url Settings.pay2go_notify_url %>
             <%= submit_tag '立即付款', class: "btn btn-block", id: "checkout" %>
           <% end %>
 
