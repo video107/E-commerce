@@ -27,7 +27,6 @@ class Order < ActiveRecord::Base
   validates :order_name, presence: true
 
   before_save :setup_total_amount
-  after_create :consume_stock
 
   def total
     gold_count * product.gold_price + silver_count * product.silver_price + rose_count * product.rose_price
@@ -43,12 +42,13 @@ class Order < ActiveRecord::Base
 
   def complete!
     update(status: "completed")
+    consume_stock
   end
 
   def payment_failed!
     update(status: "payment_failed")
   end
-  
+
   protected
 
   def setup_total_amount
