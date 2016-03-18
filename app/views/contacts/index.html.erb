@@ -22,17 +22,14 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="hero-unit ">
-              <h1 class="title"><b>1E-Shop</b> Template</h1>
-              <h3><b>OnePage / OneProduct / OneTemplate</b></h3>
-              <p><br>
-                If you want sell only one digital product, <b>1E-shop</b> template is for you.<br>
-                <b>1E-shop</b> is onePage full responsive bootstrap template.<br>
-              </p>
+              <h1 class="title"><b>極光線</b> 買一送一</h1>
+              <h3>前所未有的極致體驗</h3>
+              <h5><b>鋁合金接點不斷裂 / 超光速傳輸速度 / 智慧型LED顯示</b></h5>
               <br>
-              <a class="btn white" id="buy-now" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> BUY NOW</a>
+              <a class="btn white" id="buy-now" href="#" data-toggle="modal" data-target="#product-modal"> 只要 <b>499</b>立即擁有</a>
             </div>
           </div>
-          <div class="col-sm-12 img-hero">
+          <div class="col-sm-12 img-hero" style="height:400px;">
           </div>
         </div>
       </div>
@@ -40,21 +37,45 @@
     </div>
   </section>
 
-  <section id="start" class="padding-top-bottom text-center">
-    <div class="container">
+  <section id="features" class="features-1">
+    <div class="container padding-top-bottom">
       <div class="row header">
         <div class="col-md-12">
-          <h2>PAPER CUP</h2>
-          <p>HQ PSD Mock-up</p>
+          <h2>產品特色</h2>
+          <p>體驗前所未有的極致質感</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <p>Assault voodoo god paranoid tattoo modem kanji drone urban hotdog uplink computer. Dome car papier-mache geodesic wonton soup RAF warehouse woman military-grade numinous shrine nodality pre. Physical drone chrome sunglasses footage vinyl disposable office denim youtube. Systemic-ware advert geodesic alcohol assassin monofilament shrine Chiba voodoo god film convenience store disposable industrial grade camera cartel. Artisanal marketing RAF into advert geodesic sprawl realism woman dome footage courier table drone media youtube ablative.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12 anima scale-in ">
+            <article class="text-center">
+              <%= image_tag("goods_1.png", size: "400x400", class: "zoom-img img-responsive center-block") %>
+              <h3>​鋁合金接點絕不斷裂</h3>
+              <p>質感與耐用兼顧的鋁合金接點</p>
+              <p>高強度尼龍編織線可承受50KG拉力</p>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 anima scale-in d1">
+            <article class="text-center">
+              <%= image_tag("goods_2.png", size: "400x400", class: "zoom-img img-responsive center-block") %>
+              <h3>76根銅芯線光速傳輸</h3>
+              <p>線材核心採用76根純陽極銅芯線</p>
+              <p>充電電流可達2.1A遠勝其他線材</p>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 anima scale-in d2">
+            <article class="text-center">
+              <%= image_tag("goods_3.png", size: "400x400", class: "zoom-img img-responsive center-block") %>
+              <h3>LED即時掌握充電狀況</h3>
+              <p>充電中顯示紅色呼吸燈</p>
+              <p>充滿自動停止電流並轉為藍光恆亮</p>
+            </article>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- vertical center / slider -->
   <section id="showcase" class="">
@@ -71,17 +92,17 @@
           <div class="half-box-right">
             <div class="center-vertical">
               <div class="center-vertical-box">
-                <h1><b>See what's included</b></h1>
+                <h1><b>極光線 七大特色</b></h1>
                 <ul style="padding: 20px;">
-                  <li>Changeable lid color</li>
-                  <li>Changeable cup color</li>
-                  <li>Changeable cup label via smart object</li>
-                  <li>On/off shadows</li>
-                  <li>On/off specular</li>
-                  <li>Changeable background</li>
-                  <li>High resolution 3000 × 1875px</li>
+                  <li>買一送一! 現在購買極光線，免費贈送一般傳輸線</li>
+                  <li>奢華金、玫瑰金、極光銀，多種顏色選擇</li>
+                  <li>鋁合金接點感受前所未有的奢華質感</li>
+                  <li>高強度尼龍編織線，可承受50KG拉力</li>
+                  <li>充電中顯示紅色LED呼吸燈，充滿變為藍光恆亮</li>
+                  <li>內建AM智慧晶片，當電流過大自動停止保護手機</li>
+                  <li>最高可達2.1A電量，充電傳輸雙效合一</li>
                 </ul>
-                <a href="#" id="buy-now" data-toggle="modal" data-target="#product-modal" class="btn dark"><b>$5</b> BUY NOW</a>
+                <a href="#" id="buy-now" data-toggle="modal" data-target="#product-modal" class="btn dark">只要 <b>499</b>立即擁有</a>
               </div>
             </div>
           </div>
@@ -91,54 +112,12 @@
   </section>
   <!-- end vertical center / slider -->
 
-  <section id="requirements" class="padding-top-bottom bg-clouds text-center">
-    <div class="container">
-      <div class="row header">
-        <div class="col-md-12">
-          <h2>Requirements</h2>
-          <p>Adobe Photoshop CS4+</p>
-        </div>
-      </div>
+  <section class="cta-1 bg-dark padding-top-bottom text-center white-text">
+    <div class="container-fluid anima scale-in">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <%= image_tag("jumbotron.png", size: "300x300", class: "img-responsive img-circle center-block") %>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="features" class="features-1">
-    <div class="container padding-top-bottom">
-      <div class="row header">
-        <div class="col-md-12">
-          <h2>Features</h2>
-          <p>We are here for you</p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12 anima scale-in ">
-            <article class="text-center">
-              <%= image_tag("goods_1.png", size: "400x400", class: "zoom-img img-responsive center-block") %>
-              <h3>​ORGANISED LAYERS</h3>
-              <p>Nodal point courier towards decay dome advert wonton soup chrome voodoo.</p>
-            </article>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12 anima scale-in d1">
-            <article class="text-center">
-              <%= image_tag("goods_2.png", size: "400x400", class: "zoom-img img-responsive center-block") %>
-              <h3>​SMART OBJECT</h3>
-              <p>Table plastic concrete silent nano-dome industrial grade. Hotdog marketing.</p>
-            </article>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12 anima scale-in d2">
-            <article class="text-center">
-              <%= image_tag("goods_3.png", size: "400x400", class: "zoom-img img-responsive center-block") %>
-              <h3>TRANSPARENT BG</h3>
-              <p>Grenade wonton soup faded disposable dome cardboard spook refrigerator dolphin.</p>
-            </article>
-          </div>
+        <div class="col-sm-12">
+          <span>​Do you like PAPER CUP - Mockup? </span>
+          <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a>
         </div>
       </div>
     </div>
@@ -160,36 +139,25 @@
     </div>
   </section>
 
-  <section class="cta-1 bg-dark padding-top-bottom text-center white-text">
-    <div class="container-fluid anima scale-in">
-      <div class="row">
-        <div class="col-sm-12">
-          <span>​Do you like PAPER CUP - Mockup? </span>
-          <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="facts" class="numbers-1 padding-top-bottom text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-4">
           <div class="numbers-item">
-            <h2 class="counter">367</h2>
-            <h4>Purchases</h4>
+            <h2 class="counter">1367</h2>
+            <h4>已銷售</h4>
           </div>
         </div>
         <div class="col-md-4 col-sm-4">
           <div class="numbers-item">
-            <h2><span class="counter">99.1</span> <span>%</span></h2>
-            <h4>User Ratings</h4>
+            <h2><span class="counter">99.58</span> <span>%</span></h2>
+            <h4>滿意度</h4>
           </div>
         </div>
         <div class="col-md-4 col-sm-4">
           <div class="numbers-item">
-            <h2><span class="counter">17</span> <span>k</span></h2>
-            <h4>Followers</h4>
+            <h2><span class="counter">18</span> <span>k</span></h2>
+            <h4>用戶推薦</h4>
           </div>
         </div>
       </div>
@@ -197,21 +165,11 @@
   </section>
 
 
-
-
-  <section class="cta-1 bg-shop padding-top-bottom text-center ">
-    <div class="container-fluid anima scale-in">
-      <span>​Email for a custom and/or unlimited license.</span>
-      <a class="btn dark" href="#" data-toggle="modal" data-target=".text-modal">購物條款</a>
-    </div>
-  </section>
-
   <section id="contact" class=" padding-top-bottom">
     <div class="container">
       <div class="row header">
         <div class="col-md-12">
-          <h2>Contact me</h2>
-          <p>For any questions fill in the form below & we'll get back to you ASAP!</p>
+          <h2>聯絡我們</h2>
         </div>
       </div>
       <div class="row">
