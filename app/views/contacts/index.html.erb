@@ -276,7 +276,7 @@
           <div class="row">
             <div class="col-sm-4">
               <div class="text-center">
-                <h3>土豪金</h3>
+                <h3>奢華金</h3>
                 <h3 style="margin-top:-5px;">TWD:<%= @product.gold_price %></h3>
                 <% gold_qty = @product.gold_stock %>
                 <%= f.select :gold_count, 0..gold_qty, {}, class: "" %>
@@ -292,7 +292,7 @@
             </div>
             <div class="col-sm-4">
               <div class="text-center">
-                <h3>時尚銀</h3>
+                <h3>極光銀</h3>
                 <h3 style="margin-top:-5px;">TWD:<%= @product.silver_price %></h3>
                 <% silver_qty = @product.silver_stock %>
                 <%= f.select :silver_count, 0..silver_qty, {}, class: "" %>
