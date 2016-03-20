@@ -1,3 +1,12 @@
 .red-font{
   color: #f00;
 }
+.demo1 {
+   text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+.demo2 {
+   text-shadow: 4px 4px 0 #fff, -4px -4px 0 #fff, 4px -4px 0 #fff, -4px 4px 0 #fff, 4px 0 0 #fff, 0 4px 0 #fff, -4px 0 0 #fff, 0 -4px 0 #fff;
+}
+.title-color{
+  color: #006FFF;
+}
