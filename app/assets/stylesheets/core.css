@@ -338,13 +338,13 @@ section {
 }
 
 .bg-image-2 {
-	 background: transparent image-url("jumbotron.png")  no-repeat 5% center;
+	 background: transparent image-url("jumbotron1.png")  no-repeat 5% center;
 	 background-size: 45% 75%;
 	 /*background-size: cover;*/
 }
 @media (max-width: 767px) {
 	.bg-image-2 {
-		 background: #F7C723 image-url("jumbotron.png")  no-repeat 20% center;
+		 background: #F7C723 image-url("jumbotron1.png")  no-repeat 20% center;
 		 background-size: 45% 75%;
 		 /*background-size: cover;*/
 	}
@@ -676,18 +676,19 @@ section {
 /*-----  End of Buttons  ------*/
 
 .img-hero {
-	  background-image: image-url("1pic.jpg");
+	  background-image: image-url("2.png");
     background-repeat: no-repeat;
     background-position: center top !important;
     text-align: center;
     padding-top: 100px;
-    height: auto;
+		margin-bottom: 100px;
+    /*height: auto;*/
 		min-height: 400px;
 		background-size: contain;
 
 }
 .medium_slider {
-	background-image: image-url("jumbotron.png");
+	background-image: image-url("jumbotron1.png");
 }
 @media (max-width: 767px) {
 	.img-hero {

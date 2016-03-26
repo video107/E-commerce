@@ -31,7 +31,10 @@
           </div>
         </div>
       </div>
-      <a href="#features" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></span></a>
+      <div class="clearfix"></div>
+      <div class="row">
+        <a href="#features" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></span></a>
+      </div>
     </div>
   </section>
 
@@ -84,6 +87,9 @@
             <div class="item m-center slider_item1"></div>
             <div class="item m-center slider_item2"></div>
             <div class="item m-center slider_item3"></div>
+            <div class="item m-center slider_item4"></div>
+            <div class="item m-center slider_item5"></div>
+            <div class="item m-center slider_item6"></div>
           </div>
         </div>
         <div class="col-sm-6 bg-shop" style="height:500px;">
@@ -143,11 +149,12 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-6">
           <div class="white-box">
-            <h2><b>極光線 前所未有的極致體驗</b></h2>
-            <p>一體成型的高質感鋁合金接點，奢華但不失優雅，簡約卻不簡單，耐用度比一般傳輸線高出30倍！讓你從此不再遇到斷線之痛！</p>
+            <h2><b>前所未有的極致體驗</b></h2>
+            <p>一體成型的鋁合金接點，奢華但不失優雅，簡約卻不簡單，耐用度比一般傳輸線高出30倍！讓你從此不再遇到斷線之痛！</p>
             <p>智慧型LED顯示，在充電過程中顯示紅色呼吸燈，充滿變為藍光恆亮，讓你一目了然充電狀況！</p>
             <p>高強度尼龍編織線除了可以承受50KG的拉力外，更能避免纏繞與打結，讓你從此輕鬆整理！</p>
-            <p>內建AM智慧晶片，當電壓過大自動切斷電流，避免讓你寶貝的手機受損！</p>
+            <p>內建AM智慧晶片，不但能以2.1A電量極速充電，若發生電壓過大時會自動切斷電流
+              ，避免造成讓你寶貝的手機受損！</p>
             <blockquote class="blockquote-reverse">
               <!-- <p>Jessica Red</p> -->
             </blockquote>
@@ -270,11 +277,11 @@
           <a class="close-modal" href="#" data-dismiss="modal">
             <span class="menu-icon"></span>
           </a>
-          <%= image_tag("jumbotron.png",class: "img-responsive") %>
+          <%= image_tag("jumbotron1.png",class: "img-responsive") %>
         </div>
-        <div class="modal-body">
+        <!-- <div class="modal-body">
           <h3 class="text-center"><b>PaperCup - Mockup </b>($5,00)</h3>
-        </div>
+        </div> -->
         <div class="modal-footer">
           <%= form_for @order, :remote => true, :html => {id: "buy", class: "myform"}, :url => orders_path do |f| %>
           <div class="row">
