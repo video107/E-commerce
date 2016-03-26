@@ -20,7 +20,8 @@
 
 class Order < ActiveRecord::Base
   belongs_to :product
-
+  scope :initial, -> { where(status: "initial")  }
+  scope :completed, -> { where(status: "completed")  }
   # validates_length_of : order_phone, :is => 10
   validates_numericality_of :order_phone, :only_integer => true
   validates :order_address, presence: true
