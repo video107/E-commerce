@@ -53,7 +53,7 @@
             <% service.email @order.order_email %>
             <% service.login_type 0 %>
             <% service.encrypted_data %>
-            <% service.credit 1 %>
+            <%# service.credit 1 %>
 
             <% service.client_back_url Settings.host+"orders/"+@order.id.to_s+"/result" %>
             <% service.notify_url Settings.pay2go_notify_url %>
