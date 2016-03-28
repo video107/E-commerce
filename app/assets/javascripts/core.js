@@ -2,13 +2,13 @@
 =            Core            =
 ============================*/
 
-// Waypoints Animations 
+// Waypoints Animations
 $(window).load(function(){
-	
+
 	$('.anima').waypoint(function(){
 		$(this).addClass('in');
 	},{offset:'95%'});
-	
+
 });
 
 $(document).ready(function() {
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	}
 	});
 
-	// full-height 
+	// full-height
 	function heroHeight() {
 		var $this = $('#hero'),
 		win = $(window),
@@ -44,7 +44,7 @@ $(document).ready(function() {
 			});
 		}
 	};
-	// Start 
+	// Start
 	heroHeight();
 	$(window).resize(heroHeight);
 

@@ -15,14 +15,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require waypoints.min
 //= require core
 //= require menu-overlay
 //= require placeholders.min
 //= require jquery.waitforimages.min
 //= require jquery.counterup.min
 //= require slide
-//= require owl.carousel
 //= require numbers
+//= require owl.carousel
+//= require owl.carousel.min
 //= require contact
 //= require_tree .
