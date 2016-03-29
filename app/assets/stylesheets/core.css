@@ -636,6 +636,7 @@ section {
 	box-shadow: none;
 	color:#202020;
 	text-decoration: none;
+	margin-bottom: 50px;
 	-webkit-box-shadow: 0 4px 0 #E0E0E0;
     -moz-box-shadow: 0 4px 0 #E0E0E0;
     box-shadow: 0 4px 0 #E0E0E0;
@@ -681,7 +682,7 @@ section {
     background-position: center top !important;
     text-align: center;
     padding-top: 100px;
-		margin-bottom: 65px;
+		margin-bottom: 100px;
     /*height: auto;*/
 		min-height: 400px;
 		background-size: contain;
