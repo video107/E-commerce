@@ -1,18 +1,31 @@
 <div id="wrap">
   <section id="hero" class="m-center text-center bg-shop full-height">
     <div class="center-box">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="hero-unit ">
-              <h1 class="title"><%= @order.order_name %>你的訂單狀態: <%= @order.status %></h1>
-            </div>
-          </div>
-          <div class="col-sm-12 img-hero">
-          </div>
-        </div>
-      </div>
-      <div class="clearfix"></div>
+      <%= image_tag("thank-you.jpg", class: "thx-h") %>
     </div>
   </section>
 </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75062266-1', 'auto');
+  ga('send', 'event', 'Purchase', <%= @order.total_amount %>);
+
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1747324502164409');
+  fbq('track', 'Purchase', {
+    content_ids: <%= [@order.id]%>,
+    content_type: 'product',
+    value: <%= @order.total_amount %>,
+    currency: 'TWD'
+  });
+</script>

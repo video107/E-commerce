@@ -6,8 +6,6 @@ class ContactsController < ApplicationController
     @product = Product.first
   end
 
-
-
   def create
     @contact = Contact.new(contact_params)
     if @contact.save!
