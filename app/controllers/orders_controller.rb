@@ -27,20 +27,16 @@ class OrdersController < ApplicationController
 
   end
 
-  def pay2go_notify
-    # notification = ActiveMerchant::Billing::Integrations::Pay2go::Notification.new(request.raw_post)
-    Rails.logger.info "====> pay2go_notify start"
-    Rails.logger.info "====> pay2go params #{params}"
+  def pay2go_notify        
     @order = Order.find(params['MerchantOrderNo'])
     @order.payment_method = params['PaymentType']
+    @order.payment_params = params
     if params['Status'] == 'SUCCESS'
       @order.complete!
-      Rails.logger.info "====> complete"
-      Rails.logger.info "====> order #{@order.status}"
+    elsif params['Status'] == 'CUSTOM'
+      @order.complete!
     else
       @order.payment_failed!
-      Rails.logger.info "====> failed"
-      Rails.logger.info "====> order #{@order.status}"
     end
 
     render text: '1|OK', status: 200
