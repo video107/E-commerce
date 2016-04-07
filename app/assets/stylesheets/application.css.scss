@@ -46,3 +46,16 @@
 .spacing_large {
   height:50px;
 }
+@media (max-width: 420px) {
+  .title {
+    font-size: 50px !important;
+  }
+  #menu-link {
+    display: none;
+  }
+  .img-hero {
+    min-height: 200px;
+    margin-bottom: 15px;
+  }
+
+}
