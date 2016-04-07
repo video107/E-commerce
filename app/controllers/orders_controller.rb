@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 
   end
 
-  def pay2go_notify        
+  def pay2go_notify
     @order = Order.find(params['MerchantOrderNo'])
     @order.payment_method = params['PaymentType']
     @order.payment_params = params
