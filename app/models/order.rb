@@ -16,6 +16,7 @@
 #  updated_at     :datetime         not null
 #  product_id     :integer
 #  total_amount   :integer          default("0")
+#  payment_params :text(65535)
 #
 
 class Order < ActiveRecord::Base
