@@ -12,6 +12,7 @@ ActiveAdmin.register Order do
   index do
     column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
     column("Status")                   {|order| status_tag(order.status) }
+    column("payment_method")
     column("order_name")
     column("order_phone")
     column("order_address")
@@ -22,6 +23,7 @@ ActiveAdmin.register Order do
     column("Date", :updated_at)
     column("Name", :order_name, :sortable => :user_id)
     column("Total")                   {|order| number_to_currency order.total_amount }
+    column("payment_params")
   end
 
   show do
