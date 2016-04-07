@@ -54,7 +54,7 @@
 
             <% service.client_back_url Settings.host+"orders/"+@order.id.to_s+"/result" %>
             <% service.notify_url Settings.pay2go_notify_url %>
-            <%= submit_tag '立即付款', class: "btn btn-block", id: "checkout" %>
+            <%= submit_tag '選擇付款方式', class: "btn btn-block", id: "checkout" %>
           <% end %>
 
         </div>
