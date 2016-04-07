@@ -48,7 +48,7 @@
 }
 @media (max-width: 420px) {
   .title {
-    font-size: 50px !important;
+    font-size: 46px !important;
   }
   #menu-link {
     display: none;
@@ -60,5 +60,18 @@
   .row.mobile_row {
     margin-top: -150px;
   }
-
+}
+@media (max-width: 321px){
+  .title {
+    font-size: 35px !important;
+  }
+  .demo2 {
+     text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 0 0 #fff, 0 2px 0 #fff, -2px 0 0 #fff, 0 -2px 0 #fff;
+  }
+  .row.mobile_row {
+    margin-top: 0px;
+  }
+  .img-hero{
+    margin-bottom: 35px;
+  }
 }
