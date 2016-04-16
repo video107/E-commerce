@@ -183,6 +183,11 @@ padding-bottom: 40px;
 		max-width: 100%;
 	}
 }
+@media (max-width: 321px) {
+	.half-box-right {
+		padding-left: 10px;
+	}
+}
 
 
 /*-----  End of Half box  ------*/
@@ -689,16 +694,12 @@ padding-bottom: 40px;
 				/*-----  End of Buttons  ------*/
 
 				.img-hero {
-					background-image: image-url("1pic.jpg");
+					background-image: image-url("mockup4.png");
 					background-repeat: no-repeat;
 					background-position: center top !important;
 					text-align: center;
 					padding-top: 100px;
-					margin-bottom: 100px;
-					/*height: auto;*/
 					min-height: 400px;
-					background-size: contain;
-
 				}
 				.medium_slider {
 					background-image: image-url("jumbotron1.png");

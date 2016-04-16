@@ -46,7 +46,7 @@
 .spacing_large {
   height:50px;
 }
-@media (max-width: 420px) {
+@media (max-width: 420px) and (min-width: 321px) {
   .title {
     font-size: 46px !important;
   }
@@ -54,8 +54,10 @@
     display: none;
   }
   .img-hero {
-    min-height: 200px;
-    margin-bottom: 15px;
+    min-height: 210px;
+    background-size: 400px 210px;
+    margin-left:30px;
+    min-height: 210px;
   }
   .row.mobile_row {
     margin-top: -150px;
@@ -71,7 +73,13 @@
   .row.mobile_row {
     margin-top: 0px;
   }
+  #menu-link {
+    display: none;
+  }
   .img-hero{
     margin-bottom: 35px;
+    background-size: 330px 210px;
+    margin-left:30px;
+    min-height: 210px;
   }
 }
